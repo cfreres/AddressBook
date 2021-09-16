@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="AddressBook.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AddressBook"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Grid>
+        <StackPanel>
+            <TextBox x:Name = "NameSearch" PlaceholderText="Enter name to search."/>
+            <TextBox x:Name = "lowDateSearch" PlaceholderText="Enter lower date 'YYYY-MM-DD'"/>
+            <TextBox x:Name = "highDateSearch" PlaceholderText="Enter upper date 'YYYY-MM-DD'"/>
+            <Button Click="Search" Height="50" Width="120" Content="Search/Refresh"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name = "Name" PlaceholderText="Enter Name" Width="250"/>
+                <TextBox x:Name = "BirthDate" PlaceholderText="Enter Date of Birth 'YYYY-MM-DD'" Width="250"/>
+                <TextBox x:Name = "PhoneNumber" PlaceholderText="Enter Phone Number" Width="250"/>
+                <TextBox x:Name = "Address" PlaceholderText="Enter Address" Width="250"/>
+            </StackPanel>
+            
+            <Button Click="Add" Height="50" Width="120" Content="Add"/>
+            <Button Click="Delete" Height="50" Width="120" Content="Delete"/>
+            <controls:DataGrid x:Name="dataGrid"  Height="600" Margin="20" AutoGenerateColumns="True" ItemsSource="{Binding}">
+            </controls:DataGrid>
+
+
+        </StackPanel>
+    </Grid>
+</Page>
